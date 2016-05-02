@@ -1,0 +1,51 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+	<persistence-unit name="cs544">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>edu.mum.cs544.l03.model.bidirectional.BAddress</class>
+		<class>edu.mum.cs544.l03.model.bidirectional.BJoinAddress</class>
+		<class>edu.mum.cs544.l03.model.bidirectional.BJoinPerson</class>
+		<class>edu.mum.cs544.l03.model.bidirectional.BPerson</class>
+		
+		<class>edu.mum.cs544.l03.model.many2many.M2MBAddress</class>
+		<class>edu.mum.cs544.l03.model.many2many.M2MBPerson</class>
+		<class>edu.mum.cs544.l03.model.many2many.M2MUniAddress</class>
+		<class>edu.mum.cs544.l03.model.many2many.M2MUniPerson</class>
+		
+		<class>edu.mum.cs544.l03.model.many2one.MJoinUniAddress</class>
+		<class>edu.mum.cs544.l03.model.many2one.MJoinUniPerson</class>
+		<class>edu.mum.cs544.l03.model.many2one.MUniAddress</class>
+		<class>edu.mum.cs544.l03.model.many2one.MUniPerson</class>
+		
+		<class>edu.mum.cs544.l03.model.one2many.OJoinUniAddress</class>
+		<class>edu.mum.cs544.l03.model.one2many.OJoinUniPerson</class>
+		<class>edu.mum.cs544.l03.model.one2many.OUniAddress</class>
+		<class>edu.mum.cs544.l03.model.one2many.OUniPerson</class>
+		
+		<class>edu.mum.cs544.l03.model.one2one.BiAddress</class>
+		<class>edu.mum.cs544.l03.model.one2one.BiPerson</class>
+		<class>edu.mum.cs544.l03.model.one2one.UniAddress</class>
+		<class>edu.mum.cs544.l03.model.one2one.UniPerson</class>
+		<properties>
+		<!-- MySQL DB running on localhost -->
+	        <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
+	        <property name="hibernate.connection.url" value="jdbc:mysql://localhost/cs544" />
+	        <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+	        <property name="hibernate.connection.username" value="root" />
+	        <property name="hibernate.connection.password" value="root" />		 		
+	
+			<!-- Use the Hibernate built-in pool for tests. -->
+			<property name="hibernate.connection.pool_size" value="1" />
+			
+			<!-- Create database -->
+			<property name="hibernate.hbm2ddl.auto" value="create" />
+	
+			<!-- Show all SQL DML executed by Hibernate -->
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.use_sql_comments" value="true" />
+			<property name="hibernate.format_sql" value="false" />	
+		</properties>
+	</persistence-unit>
+</persistence>          
